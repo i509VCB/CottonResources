@@ -33,6 +33,7 @@ dependencies {
     modCompileOnly ("me.shedaniel:RoughlyEnoughItems:${rei_version}") {
         exclude(group: "blue.endless", module: "jankson")
         exclude(group: "io.github.prospector.modmenu", module: "ModMenu")
+        exclude(module: "fabric-api")
     }
     
     implementation "com.google.code.findbugs:jsr305:3.0.2"

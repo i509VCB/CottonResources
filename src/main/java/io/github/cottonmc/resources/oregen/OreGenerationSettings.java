@@ -45,8 +45,6 @@ public class OreGenerationSettings {
 	public Set<BlockState> ores = new HashSet<>();
 	public int min_height = 6;
 	public int max_height = 64;
-	public DimensionSpec dimensions = new DimensionSpec();
-	public BiomeSpec biomes = new BiomeSpec();
 	public int cluster_count = 8;
 	public int cluster_size = 8;
 
@@ -68,11 +66,6 @@ public class OreGenerationSettings {
 		return this;
 	}
 
-	public OreGenerationSettings excludeDimension(String dimension) {
-		this.biomes.deny.add(new Identifier(dimension));
-		return this;
-	}
-
 	public OreGenerationSettings withClusterCount(int cluster_count) {
 		this.cluster_count = cluster_count;
 		return this;
@@ -85,8 +78,6 @@ public class OreGenerationSettings {
 
 	public static OreGenerationSettings getDefault() {
 		OreGenerationSettings settings = new OreGenerationSettings();
-		settings.excludeDimension("minecraft:the_nether");
-		settings.excludeDimension("minecraft:the_end");
 		return settings;
 	}
 
@@ -103,11 +94,7 @@ public class OreGenerationSettings {
 
 		JsonElement dimensionsElem = obj.get("dimensions");
 
-		if (dimensionsElem != null) result.dimensions = DimensionSpec.deserialize(dimensionsElem);
-
 		JsonElement biomesElem = obj.get("biomes");
-
-		if (biomesElem != null) result.biomes = BiomeSpec.deserialize(biomesElem);
 
 		return result;
 	}
@@ -151,8 +138,6 @@ public class OreGenerationSettings {
 				.add("max_height", max_height)
 				.add("cluster_size", cluster_size)
 				.add("cluster_count", cluster_count)
-				.add("dimensionspec", dimensions)
-				.add("biomes", biomes)
 				.toString();
 	}
 }

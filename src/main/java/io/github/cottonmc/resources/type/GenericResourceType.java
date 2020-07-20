@@ -142,7 +142,7 @@ public class GenericResourceType implements ResourceType {
 	}
 
 	public Item registerItem(String itemName) {
-		return CommonRegistry.register(itemName, new Item(CottonResourcesItemGroup.ITEM_GROUP_SETTINGS));
+		return CommonRegistry.register(itemName, new Item(CottonResources.ITEM_GROUP_SETTINGS));
 	}
 
 	@Override
@@ -171,7 +171,7 @@ public class GenericResourceType implements ResourceType {
 			handleMipped(resultBlock);
 		}
 
-		BlockItem resultItem = new BlockItem(resultBlock, CottonResourcesItemGroup.ITEM_GROUP_SETTINGS); //Shouldn't be necessary, but is?
+		BlockItem resultItem = new BlockItem(resultBlock, CottonResources.ITEM_GROUP_SETTINGS); //Shouldn't be necessary, but is?
 
 		return CommonRegistry.register(blockName, resultBlock, resultItem);
 	}

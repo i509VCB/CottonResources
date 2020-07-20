@@ -139,6 +139,9 @@ public final class BuiltinResources {
 			.build());
 
 	private static <T extends ResourceType> T register(T resourceType) {
-		return Registry.register(CottonResources.RESOURCE_TYPES, CottonResources.resources(resourceType.getBaseResource()), resourceType);
+		return Registry.register(CottonResources.RESOURCE_TYPES, CottonResources.id(resourceType.getBaseResource()), resourceType);
+	}
+
+	static void init() {
 	}
 }

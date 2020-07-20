@@ -8,7 +8,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.cottonmc.resources.CottonResources"
+      "io.github.cottonmc.resources.CottonResourcesMod"
     ],
     "rei_plugins_v0": [
       "io.github.cottonmc.resources.compat.REICompat"

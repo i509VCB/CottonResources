@@ -50,27 +50,27 @@ public class GlowingLayeredOreBlock extends LayeredOreBlock {
 
 	@Override
 	public void onBlockBreakStart(BlockState state, World world, BlockPos pos, PlayerEntity player) {
-		light(state, world, pos);
+		this.light(state, world, pos);
 		super.onBlockBreakStart(state, world, pos, player);
 	}
 
 	@Override
 	public void onSteppedOn(World world, BlockPos pos, Entity entity) {
-		light(world.getBlockState(pos), world, pos);
+		this.light(world.getBlockState(pos), world, pos);
 		super.onSteppedOn(world, pos, entity);
 	}
 
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		if (world.isClient) {
-			return ActionResult.SUCCESS;
-		} else {
-			light(state, world, pos);
+		if (!world.isClient()) {
+			this.light(state, world, pos);
 			return ActionResult.PASS;
 		}
+
+		return super.onUse(state, world, pos, player, hand, hit);
 	}
 
-	private static void light(BlockState state, World world, BlockPos pos) {
+	private void light(BlockState state, World world, BlockPos pos) {
 		if (!state.get(LIT)) {
 			world.setBlockState(pos, state.with(LIT, true), 3);
 		}

@@ -93,7 +93,7 @@ public class OregenResourceListener implements SimpleSynchronousResourceReloadLi
 
 	@Override
 	public Identifier getFabricId() {
-		return CottonResources.resources("ore_voting");
+		return CottonResources.id("ore_voting");
 	}
 
 	public static OreVoteConfig getConfig() {

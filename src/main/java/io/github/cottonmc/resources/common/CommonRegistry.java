@@ -79,7 +79,7 @@ public class CommonRegistry {
 	 * @return Returns either an already existing block with the specified name or a new one that was register under the given name.
 	 */
 	public static Block register(String name, Block block) {
-		BlockItem item = new BlockItem(block, CottonResourcesItemGroup.ITEM_GROUP_SETTINGS);
+		BlockItem item = new BlockItem(block, CottonResources.ITEM_GROUP_SETTINGS);
 		return register(name, block, item);
 	}
 

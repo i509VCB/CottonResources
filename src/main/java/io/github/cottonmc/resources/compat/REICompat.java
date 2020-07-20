@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Set;
 
 public class REICompat implements REIPluginV0 {
-	public static final Identifier ID = CottonResources.resources("disable_items");
+	public static final Identifier ID = CottonResources.id("disable_items");
 
 	private static final Set<String> IMMUNE_TO_HIDING = ImmutableSet.<String>of(
 			"wood", "stone", "iron", "gold", "diamond"

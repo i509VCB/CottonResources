@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package io.github.cottonmc.resources.oregen;
+package io.github.cottonmc.resources.world.gen;
 
 import java.util.ArrayList;
 import java.util.Collections;

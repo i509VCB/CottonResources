@@ -70,9 +70,9 @@ public class LayeredOreBlock extends OreBlock {
 
 					if (pools.isEmpty()) {
 						//Yup. Somehow we got a loot pool that just never drops anything.
-						if (!complainedAboutLoot) {
-							CottonResources.LOGGER.error("Loot pool '" + tableId + "' doesn't seem to be able to drop anything. Supplying the ore block instead. Please report this to the Cotton team!");
-							complainedAboutLoot = true;
+						if (!this.complainedAboutLoot) {
+							CottonResources.LOGGER.error("Loot pool \"" + tableId + "\" doesn't seem to be able to drop anything. Supplying the ore block instead. Please report this to the Cotton team!");
+							this.complainedAboutLoot = true;
 						}
 
 						result.add(new ItemStack(this.asItem()));
